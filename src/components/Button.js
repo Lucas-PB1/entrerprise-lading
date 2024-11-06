@@ -2,7 +2,7 @@ import React from 'react';
 
 function Button({ children, onClick, variant = 'primary' }) {
     return (
-        <button className={`btn btn-${variant} mx-2`} onClick={onClick}> {children} </button>
+        <button className={`btn btn-${variant}`} onClick={onClick}> {children} </button>
     );
 }
 

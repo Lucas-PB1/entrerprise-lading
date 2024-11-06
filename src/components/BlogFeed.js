@@ -18,7 +18,7 @@ const BlogFeed = ({ posts }) => {
               <Card>
                 <Card.Img variant="top" src={post.imageUrl} alt={post.title} />
                 <Card.Body>
-                  <Card.Title><b>{limitText(post.title, 30)}</b></Card.Title>
+                  <Card.Title><b>{limitText(post.title, 25)}</b></Card.Title>
                   <Card.Text>{limitText(post.body, 100)}</Card.Text>
                 </Card.Body>
               </Card>
