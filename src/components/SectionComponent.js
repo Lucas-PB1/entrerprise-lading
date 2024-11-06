@@ -26,7 +26,7 @@ function SectionComponent({ id, title, description, cta, mediaUrl, isVideo, imag
                                 src={mediaUrl}
                                 title={title}
                                 allowFullScreen
-                                className="w-100"
+                                className="w-100 mb-3"
                                 style={{ height: '400px' }}
                             />
                         ) : (

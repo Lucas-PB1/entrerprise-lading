@@ -1,6 +1,6 @@
 // src/api/data.ts
 // Importação de imagens usadas na landing page
-import axios from 'axios';
+import axios from "axios";
 import logo from "../images/logo.png";
 
 // Imagem Seção
@@ -9,15 +9,14 @@ import image2 from "../images/sections/image-2.jpg";
 import image3 from "../images/sections/image-3.jpg";
 import image4 from "../images/sections/image-4.jpg";
 
-// Imagem Blog 
+// Imagem Blog
 import blog1 from "../images/blog/blog-1.jpg";
-
 
 // Interfaces e tipos
 // Define a estrutura de um link de navegação para o menu principal
 interface NavLink {
   label: string; // Texto exibido no link
-  href: string;  // Referência para a âncora ou página de destino
+  href: string; // Referência para a âncora ou página de destino
 }
 
 // Define a estrutura de um link para redes sociais
@@ -28,38 +27,38 @@ interface SocialLink {
 
 // Define a estrutura de uma seção na landing page, que pode conter texto, imagem ou vídeo
 interface Section {
-  title: string;              // Título da seção
-  description: string;        // Descrição ou conteúdo principal da seção
-  mediaUrl: string;           // URL da mídia (imagem ou vídeo) usada na seção
-  isVideo: boolean;           // Indica se a mídia é um vídeo (true) ou imagem (false)
+  title: string; // Título da seção
+  description: string; // Descrição ou conteúdo principal da seção
+  mediaUrl: string; // URL da mídia (imagem ou vídeo) usada na seção
+  isVideo: boolean; // Indica se a mídia é um vídeo (true) ou imagem (false)
   imagePosition: "left" | "right"; // Posição da imagem na seção, 'left' ou 'right'
-  hasButton: boolean;         // Indica se a seção inclui um botão de ação
-  bgColor: string;            // Cor de fundo da seção
+  hasButton: boolean; // Indica se a seção inclui um botão de ação
+  bgColor: string; // Cor de fundo da seção
 }
 
 // Define a estrutura de dados para o cabeçalho, contendo o logotipo, links de navegação e redes sociais
 interface HeaderData {
-  logo: string;          // URL do logotipo
-  navLinks: NavLink[];   // Array de links de navegação
+  logo: string; // URL do logotipo
+  navLinks: NavLink[]; // Array de links de navegação
   socialLinks: SocialLink[]; // Array de links para redes sociais
 }
 
 // Define a estrutura principal de dados da landing page
 interface LandingData {
-  title: string;             // Título principal da landing page
-  description: string;       // Descrição da landing page
-  cta: string;               // Texto do botão de chamada para ação (Call to Action)
-  imageUrl: string;          // URL da imagem principal exibida na landing page
-  bgColor: string;           // Cor de fundo da seção principal da landing page
-  sections: Section[];       // Array de seções para exibir conteúdo adicional na landing page
+  title: string; // Título principal da landing page
+  description: string; // Descrição da landing page
+  cta: string; // Texto do botão de chamada para ação (Call to Action)
+  imageUrl: string; // URL da imagem principal exibida na landing page
+  bgColor: string; // Cor de fundo da seção principal da landing page
+  sections: Section[]; // Array de seções para exibir conteúdo adicional na landing page
 }
 
 // Define a estrutura de um post do blog
 interface BlogPost {
-  id: number;        // Identificador único do post
-  title: string;     // Título do post
-  body: string;      // Conteúdo do post
-  imageUrl: string;  // URL da imagem do post
+  id: number; // Identificador único do post
+  title: string; // Título do post
+  body: string; // Conteúdo do post
+  imageUrl: string; // URL da imagem do post
 }
 
 // Funções de busca de dados
@@ -83,8 +82,8 @@ export const fetchHeaderData = async (): Promise<HeaderData> => {
     socialLinks: [
       { icon: "facebook", href: "https://facebook.com/TechInnovators" },
       { icon: "twitter", href: "https://twitter.com/TechInnovators" },
-      { icon: "instagram", href: "https://instagram.com/TechInnovators" }
-    ]
+      { icon: "instagram", href: "https://instagram.com/TechInnovators" },
+    ],
   };
 };
 
@@ -93,8 +92,10 @@ export const fetchHeaderData = async (): Promise<HeaderData> => {
  * @returns {Promise<BlogPost[]>} - Array com os dados dos posts do blog
  */
 export const fetchPosts = async (): Promise<BlogPost[]> => {
-  const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-  
+  const response = await axios.get(
+    "https://jsonplaceholder.typicode.com/posts"
+  );
+
   // Mapeia os dados recebidos para o formato BlogPost
   const posts = response.data.slice(0, 6).map((post: any) => ({
     id: post.id,
@@ -116,8 +117,8 @@ export const fetchLandingData = async (): Promise<LandingData> => {
     description:
       "Na Tech Innovators, transformamos sua visão em soluções tecnológicas inovadoras. Nossa equipe é apaixonada por criar ferramentas que impulsionam o sucesso do seu negócio. Com uma abordagem centrada no cliente e focada em resultados, estamos prontos para levar sua empresa a novos patamares.",
     cta: "Fale Conosco", // Botão de chamada para ação principal
-    imageUrl: image1,     // Imagem principal da landing page
-    bgColor: "white",     // Cor de fundo da seção principal
+    imageUrl: image1, // Imagem principal da landing page
+    bgColor: "white", // Cor de fundo da seção principal
     sections: [
       {
         title: "Nossos Serviços",
@@ -159,6 +160,14 @@ export const fetchLandingData = async (): Promise<LandingData> => {
         hasButton: false,
         bgColor: "white",
       },
-    ]
+    ],
   };
+};
+
+export const saveLogToFile = (data: string): void => {
+  const blob = new Blob([data], { type: "text/plain" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "contact_log.txt";
+  link.click();
 };

@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+```markdown
+# Projeto React - Landing Page com Funcionalidades
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto é uma landing page desenvolvida em React, com diversas funcionalidades, como barra de cookies, botão flutuante do WhatsApp e integração com APIs. O objetivo é criar uma experiência de usuário moderna, acessível e otimizada.
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+- **Landing Page Dinâmica**: Seções interativas com animações e conteúdo carregado dinamicamente de APIs.
+- **Barra de Cookies**: Exibe uma barra de cookies no rodapé com opções de aceitação.
+- **Botão Flutuante de WhatsApp**: Botão para contato rápido via WhatsApp.
+- **Configuração de SEO**: Melhorias na performance e indexação no Google.
+- **Acessibilidade**: Com foco em práticas de acessibilidade W3C e boas práticas de design.
 
-### `npm start`
+## Pré-requisitos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Certifique-se de que você tenha as seguintes ferramentas instaladas:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Node.js](https://nodejs.org/en/) (v14 ou superior)
+- [npm](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)
 
-### `npm test`
+## Instalação
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clone o repositório**:
+   ```bash
+   git clone https://seu-repositorio-url.git
+   ```
 
-### `npm run build`
+2. **Navegue até o diretório do projeto**:
+   ```bash
+   cd nome-do-diretorio
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Instale as dependências**:
+   Se você estiver usando o **npm**:
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   Ou, se estiver usando o **Yarn**:
+   ```bash
+   yarn install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. **Inicie a aplicação**:
+   Para rodar a aplicação no modo de desenvolvimento, execute o seguinte comando:
 
-### `npm run eject`
+   Se estiver usando **npm**:
+   ```bash
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   Se estiver usando **Yarn**:
+   ```bash
+   yarn start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   A aplicação será iniciada em [http://localhost:3000](http://localhost:3000).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Funcionalidades Importantes
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Barra de Cookies
 
-## Learn More
+A barra de cookies utiliza a biblioteca [react-cookie-consent](https://www.npmjs.com/package/react-cookie-consent) para exibir um aviso ao usuário sobre o uso de cookies no site. A aceitação dos cookies é salva no armazenamento local, oferecendo uma experiência mais personalizada.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Botão Flutuante de WhatsApp
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+O botão flutuante do WhatsApp foi implementado utilizando um ícone do [Font Awesome](https://fontawesome.com/), permitindo que o usuário entre em contato diretamente via WhatsApp. O número de contato pode ser configurado diretamente no componente.
 
-### Code Splitting
+### SEO e Performance
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+O SEO foi otimizado com o uso de meta tags, títulos dinâmicos e URLs amigáveis para melhorar a indexação nos motores de busca. A performance do site foi também otimizada para garantir uma navegação rápida e responsiva.
 
-### Analyzing the Bundle Size
+### Acessibilidade
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+O projeto foi desenvolvido com foco em acessibilidade, utilizando práticas recomendadas pela [W3C](https://www.w3.org/WAI/WCAG21/). Isso garante que a landing page seja utilizável por pessoas com deficiência, incluindo a navegação com teclado e leitores de tela.
 
-### Making a Progressive Web App
+## Personalizações
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Você pode personalizar o conteúdo da página, as cores, os textos e até mesmo as animações de acordo com as suas necessidades. Para isso, basta editar os componentes e variáveis no arquivo `src/pages/LandingPage.js`.
 
-### Advanced Configuration
+## Dependências
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [React](https://reactjs.org/)
+- [React Bootstrap](https://react-bootstrap.github.io/)
+- [react-cookie-consent](https://www.npmjs.com/package/react-cookie-consent)
+- [Font Awesome](https://fontawesome.com/)
 
-### Deployment
+## Contribuições
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contribuições são bem-vindas! Caso você tenha uma sugestão ou correção, fique à vontade para abrir um **issue** ou um **pull request**.
+```

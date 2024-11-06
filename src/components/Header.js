@@ -1,14 +1,9 @@
 // src/components/Header.js
 import React from 'react';
 import { Container, Navbar, Nav } from 'react-bootstrap';
-import { FaPhone, FaEnvelope, FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaPhone, FaEnvelope } from 'react-icons/fa';
 import NavLinks from './NavLinks';
-
-const socialIcons = {
-  facebook: <FaFacebookF />,
-  twitter: <FaTwitter />,
-  instagram: <FaInstagram />
-};
+import SocialIcons from './SocialIcons';
 
 const Header = ({ navLinks, logo, socialLinks }) => {
   return (
@@ -19,13 +14,7 @@ const Header = ({ navLinks, logo, socialLinks }) => {
             <FaPhone /> <span className="ms-2 me-3">+55 (83) 91234-5678</span>
             <FaEnvelope /> <span className="ms-2">info@techinnovators.com</span>
           </div>
-          <div className="social-icons">
-            {socialLinks.map((link, index) => (
-              <a key={index} href={link.href} className="text-light mx-2" aria-label={link.icon.charAt(0).toUpperCase() + link.icon.slice(1)}>
-                {socialIcons[link.icon]}
-              </a>
-            ))}
-          </div>
+          <SocialIcons socialLinks={socialLinks} /> {/* Usando o componente SocialIcons */}
         </Container>
       </Navbar>
       <Navbar bg="light" expand="lg">

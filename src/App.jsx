@@ -1,15 +1,17 @@
 // src/App.js
-import React, { useEffect, useState } from 'react';
-import GlobalStyles from './styles/GlobalStyles';
-import LandingPage from './pages/LandingPage';
-import Header from './components/Header';
-import Footer from './components/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { fetchHeaderData, fetchPosts } from './api/api.ts';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import BlogFeed from './components/BlogFeed';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import LandingPage from './pages/LandingPage';
+import GlobalStyles from './styles/GlobalStyles';
+import React, { useEffect, useState } from 'react';
 import ContactForm from './components/ContactForm.js';
+import { fetchHeaderData, fetchPosts } from './api/api.ts';
+import FloatingWhatsAppButton from './components/FloatingWhatsAppButton.js';
+import Cookie from './components/Cookie.js';
 
 function App() {
   useEffect(() => { AOS.init({ duration: 600, once: false }); }, []);
@@ -36,7 +38,7 @@ function App() {
     };
     loadBlogPosts();
   }, []);
-
+  
   return (
     <div className="d-flex flex-column min-vh-100">
       <GlobalStyles />
@@ -44,9 +46,11 @@ function App() {
       <main className="flex-fill">
         <LandingPage />
       </main>
-      <BlogFeed posts={posts} /> {/* Passando apenas as postagens para o BlogFeed */}
+      <BlogFeed posts={posts} />
       <ContactForm />
-      <Footer navLinks={navLinks} />
+      <Footer navLinks={navLinks} socialLinks={socialLinks}  />
+      <FloatingWhatsAppButton />
+      <Cookie />
     </div>
   );
 }

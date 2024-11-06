@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { saveLogToFile } from '../api/api.ts'; // Importando a função do arquivo TypeScript
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -17,18 +17,16 @@ const ContactForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const serviceID = 'service_9si68r5';
-        const templateID = 'template_fj51rkj';
-        const userID = 'YOUR_USER_ID';
+        // Preparar os dados do formulário para salvar
+        const logData = `Nome: ${formData.name}\nEmail: ${formData.email}\nMensagem: ${formData.message}\n\n`;
 
-        emailjs.send(serviceID, templateID, formData, userID)
-            .then(() => {
-                setStatusMessage('Email enviado com sucesso!');
-                setFormData({ name: '', email: '', message: '' });
-            }).catch((error) => {
-                console.error('Erro ao enviar email:', error);
-                setStatusMessage('Erro ao enviar o email.');
-            });
+        // Chama a função TypeScript para gerar o arquivo de log
+        saveLogToFile(logData);
+
+        // Mensagem de sucesso para o usuário
+        setStatusMessage('Formulário enviado com sucesso!');
+        // Limpar os dados do formulário
+        setFormData({ name: '', email: '', message: '' });
     };
 
     return (
@@ -38,8 +36,8 @@ const ContactForm = () => {
                     <div>
                         <h2 className="display-4">Entre em Contato</h2>
                         <p className="lead text-justify" style={{ fontSize: '1.2em', lineHeight: '1.5' }}>
-                            Tem alguma dúvida ou precisa de mais informações? Preencha o formulário ao lado e nossa equipe responderá o mais rápido possível.
-                            Estamos sempre prontos para ajudar e fornecer as melhores soluções para suas necessidades.
+                        Tem alguma dúvida ou precisa de mais informações? Preencha o formulário ao lado e nossa equipe responderá o mais rápido possível.
+                        Estamos sempre prontos para ajudar e fornecer as melhores soluções para suas necessidades.
                         </p>
                     </div>
                 </Col>
