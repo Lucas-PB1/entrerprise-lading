@@ -1,0 +1,45 @@
+{
+  "title": "Bem-vindo à Tech Innovators",
+  "description": "Na Tech Innovators, transformamos sua visão em soluções tecnológicas inovadoras. Nossa equipe é apaixonada por criar ferramentas que impulsionam o sucesso do seu negócio. Com uma abordagem centrada no cliente e focada em resultados, estamos prontos para levar sua empresa a novos patamares.",
+  "cta": "Fale Conosco",
+  "imageUrl": "../images/sections/image-1.jpg",
+  "bgColor": "white",
+  "sections": [
+    {
+      "title": "Nossos Serviços",
+      "description": "Oferecemos uma ampla gama de serviços que incluem desenvolvimento de software personalizado, consultoria em TI e integração de sistemas. Nossa missão é ajudar sua empresa a otimizar processos, reduzir custos e melhorar a eficiência operacional. Estamos aqui para fornecer soluções sob medida que atendam às suas necessidades específicas e ajudem você a alcançar seus objetivos estratégicos.",
+      "mediaUrl": "../images/sections/image-3.jpg",
+      "isVideo": false,
+      "imagePosition": "right",
+      "hasButton": true,
+      "bgColor": "#f5f5f5"
+    },
+    {
+      "title": "Vídeo Institucional",
+      "description": "Assista ao nosso vídeo institucional e descubra como a Tech Innovators pode transformar a sua empresa. Neste vídeo, apresentamos exemplos de nossos projetos anteriores, destacando o impacto positivo que nossas soluções têm causado em nossos clientes. Deixe-se inspirar pelas histórias de sucesso e veja como podemos ajudar a sua empresa a se destacar no mercado.",
+      "mediaUrl": "https://www.youtube.com/embed/8vkGADckmiI",
+      "isVideo": true,
+      "imagePosition": "right",
+      "hasButton": true,
+      "bgColor": "white"
+    },
+    {
+      "title": "Depoimentos de Clientes",
+      "description": "Nossos clientes são a nossa maior prioridade. Veja o que eles têm a dizer sobre nossa abordagem e como nossos serviços impactaram positivamente seus negócios. Esses depoimentos refletem a confiança que depositam em nós e os resultados que obtiveram após a implementação de nossas soluções. Junte-se a um grupo crescente de empresas satisfeitas que transformaram seus desafios em oportunidades.",
+      "mediaUrl": "../images/sections/image-2.jpg",
+      "isVideo": false,
+      "imagePosition": "left",
+      "hasButton": true,
+      "bgColor": "#f5f5f5"
+    },
+    {
+      "title": "Contato",
+      "description": "Entre em contato conosco para discutir como podemos ajudar a sua empresa a crescer. Nossa equipe está pronta para ouvir suas necessidades e oferecer soluções personalizadas que se alinhem com seus objetivos. Não hesite em nos enviar uma mensagem, ligar ou preencher nosso formulário de contato. Estamos ansiosos para colaborar com você e levar sua visão ao próximo nível.",
+      "mediaUrl": "../images/sections/image-4.jpg",
+      "isVideo": false,
+      "imagePosition": "right",
+      "hasButton": false,
+      "bgColor": "white"
+    }
+  ]
+}

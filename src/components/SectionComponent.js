@@ -1,13 +1,9 @@
 // src/components/SectionComponent.js
-import React, { useEffect } from 'react';
+import React from 'react';
 import Button from './Button';
 import { Container, Row, Col } from 'react-bootstrap';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
-function SectionComponent({ id, title, description, cta, mediaUrl, isVideo, imagePosition, hasButton, bgColor, animation }) {
-    useEffect(() => { AOS.refresh(); }, []);
-
+function SectionComponent({ id, title, description, cta, mediaUrl, isVideo, imagePosition = 'left', hasButton, bgColor, animation }) {
     return (
         <section id={id} className="p-4" style={{ backgroundColor: bgColor }} data-aos={animation}>
             <Container>
@@ -22,19 +18,9 @@ function SectionComponent({ id, title, description, cta, mediaUrl, isVideo, imag
 
                     <Col md={isVideo ? 12 : 6} className="text-center">
                         {isVideo ? (
-                            <iframe
-                                src={mediaUrl}
-                                title={title}
-                                allowFullScreen
-                                className="w-100 mb-3"
-                                style={{ height: '400px' }}
-                            />
+                            <iframe src={mediaUrl} title={title} className="w-100 mb-3" style={{ height: '400px' }} allowFullScreen />
                         ) : (
-                            <img
-                                src={mediaUrl}
-                                alt={title}
-                                className="img-fluid mx-auto"
-                            />
+                            <img src={mediaUrl} alt={title} className="img-fluid mx-auto" />
                         )}
                     </Col>
                 </Row>
@@ -42,5 +28,4 @@ function SectionComponent({ id, title, description, cta, mediaUrl, isVideo, imag
         </section>
     );
 }
-
 export default SectionComponent;

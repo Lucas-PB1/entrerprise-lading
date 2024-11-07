@@ -2,10 +2,7 @@
 import React from 'react';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 
-// Função para limitar o comprimento do texto
-const limitText = (text, maxLength) => {
-  return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
-};
+const limitText = (text, maxLength) => { return text.length > maxLength ? text.substring(0, maxLength) + '...' : text; };
 
 const BlogFeed = ({ posts }) => {
   return (

@@ -10,13 +10,20 @@ const Header = ({ navLinks, logo, socialLinks }) => {
     <header>
       <Navbar bg="dark" variant="dark" expand="lg" className="top-bar py-1">
         <Container className="justify-content-between">
-          <div className="contact-icons d-flex align-items-center text-light small">
-            <FaPhone /> <span className="ms-2 me-3">+55 (83) 91234-5678</span>
-            <FaEnvelope /> <span className="ms-2">info@techinnovators.com</span>
+          <div className="contact-icons d-flex align-items-center text-light small flex-wrap">
+            <div className="d-flex align-items-center me-3 mb-2 mb-md-0">
+              <FaPhone />
+              <span className="ms-2">+55 (83) 91234-5678</span>
+            </div>
+            <div className="d-flex align-items-center mb-2 mb-md-0">
+              <FaEnvelope />
+              <span className="ms-2">info@techinnovators.com</span>
+            </div>
           </div>
-          <SocialIcons socialLinks={socialLinks} /> {/* Usando o componente SocialIcons */}
+          <SocialIcons socialLinks={socialLinks} />
         </Container>
       </Navbar>
+
       <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand href="#" className="d-flex align-items-center">

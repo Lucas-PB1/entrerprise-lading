@@ -12,12 +12,11 @@ function Cookie() {
       buttonClasses="btn btn-primary btn-sm"
       containerClasses="container-fluid p-3 text-center text-light"
       buttonWrapperClasses="d-flex justify-content-center"
-      expires={150}
-    >
+      expires={150}>
+
       <span className="me-2">Este site utiliza cookies para melhorar sua experiência.</span>
-      <a href="/politica-de-privacidade" className="text-warning">
-        Saiba mais
-      </a>
+      <a href="/politica-de-privacidade" className="text-warning"> Saiba mais </a>
+
     </CookieConsent>
   );
 }

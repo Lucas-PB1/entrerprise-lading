@@ -1,44 +1,39 @@
 // src/App.js
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect, useState } from 'react';
+import { fetchHeaderData, fetchPosts } from './api/api.ts';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import BlogFeed from './components/BlogFeed';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import LandingPage from './pages/LandingPage';
 import GlobalStyles from './styles/GlobalStyles';
-import React, { useEffect, useState } from 'react';
-import ContactForm from './components/ContactForm.js';
-import { fetchHeaderData, fetchPosts } from './api/api.ts';
-import FloatingWhatsAppButton from './components/FloatingWhatsAppButton.js';
-import Cookie from './components/Cookie.js';
+import ContactForm from './components/ContactForm';
+import FloatingWhatsAppButton from './components/FloatingWhatsAppButton';
+import Cookie from './components/Cookie';
 
 function App() {
-  useEffect(() => { AOS.init({ duration: 600, once: false }); }, []);
-
   const [logo, setLogo] = useState('');
   const [navLinks, setNavLinks] = useState([]);
   const [socialLinks, setSocialLinks] = useState([]);
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    const loadHeaderData = async () => {
-      const data = await fetchHeaderData();
-      setLogo(data.logo);
-      setNavLinks(data.navLinks);
-      setSocialLinks(data.socialLinks);
+    const loadData = async () => {
+      const headerData = await fetchHeaderData();
+      setLogo(headerData.logo);
+      setNavLinks(headerData.navLinks);
+      setSocialLinks(headerData.socialLinks);
+
+      const blogPosts = await fetchPosts();
+      setPosts(blogPosts);
     };
-    loadHeaderData();
+
+    AOS.init({ duration: 600, once: false });
+    loadData();
   }, []);
 
-  useEffect(() => {
-    const loadBlogPosts = async () => {
-      const data = await fetchPosts();
-      setPosts(data);
-    };
-    loadBlogPosts();
-  }, []);
-  
   return (
     <div className="d-flex flex-column min-vh-100">
       <GlobalStyles />
@@ -48,7 +43,7 @@ function App() {
       </main>
       <BlogFeed posts={posts} />
       <ContactForm />
-      <Footer navLinks={navLinks} socialLinks={socialLinks}  />
+      <Footer navLinks={navLinks} socialLinks={socialLinks} />
       <FloatingWhatsAppButton />
       <Cookie />
     </div>

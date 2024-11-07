@@ -21,12 +21,7 @@ const WhatsAppButton = styled.a`
 `;
 
 const FloatingWhatsAppButton = () => (
-  <WhatsAppButton
-    href="https://wa.me/5583996227670"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Contato via WhatsApp"
-  >
+  <WhatsAppButton href="https://wa.me/5583996227670" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
     <i className="fab fa-whatsapp" />
   </WhatsAppButton>
 );

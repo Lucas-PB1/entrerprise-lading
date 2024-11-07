@@ -10,22 +10,17 @@ const ContactForm = () => {
     });
     const [statusMessage, setStatusMessage] = useState('');
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+    const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         // Preparar os dados do formulário para salvar
         const logData = `Nome: ${formData.name}\nEmail: ${formData.email}\nMensagem: ${formData.message}\n\n`;
-
-        // Chama a função TypeScript para gerar o arquivo de log
         saveLogToFile(logData);
 
         // Mensagem de sucesso para o usuário
         setStatusMessage('Formulário enviado com sucesso!');
-        // Limpar os dados do formulário
         setFormData({ name: '', email: '', message: '' });
     };
 
@@ -36,8 +31,8 @@ const ContactForm = () => {
                     <div>
                         <h2 className="display-4">Entre em Contato</h2>
                         <p className="lead text-justify" style={{ fontSize: '1.2em', lineHeight: '1.5' }}>
-                        Tem alguma dúvida ou precisa de mais informações? Preencha o formulário ao lado e nossa equipe responderá o mais rápido possível.
-                        Estamos sempre prontos para ajudar e fornecer as melhores soluções para suas necessidades.
+                            Tem alguma dúvida ou precisa de mais informações? Preencha o formulário ao lado e nossa equipe responderá o mais rápido possível.
+                            Estamos sempre prontos para ajudar e fornecer as melhores soluções para suas necessidades.
                         </p>
                     </div>
                 </Col>

@@ -29,28 +29,28 @@ function LandingPage() {
       </Helmet>
 
       <SectionComponent
-          id="home"
-          title={data.title || 'Bem-vindo'}
-          description={data.description || 'Conheça nossos serviços e produtos.'}
-          cta={data.cta || 'Ver mais'}
-          bgColor={data.bgColor || '#fff'}
-          animation="fade-up"
-          mediaUrl={data.imageUrl}
+        id="home"
+        title={data.title || 'Bem-vindo'}
+        description={data.description || 'Conheça nossos serviços e produtos.'}
+        cta={data.cta || 'Ver mais'}
+        bgColor={data.bgColor || '#fff'}
+        animation="fade-up"
+        mediaUrl={data.imageUrl}
       />
 
       {data.sections && data.sections.map((section, index) => (
         <React.Fragment key={index}>
           <SectionComponent
-              id={section.title?.toLowerCase().replace(/\s+/g, '-') || `section-${index}`}
-              title={section.title || 'Seção'}
-              description={section.description || 'Descrição da seção'}
-              cta={section.hasButton ? "Saiba Mais" : ""}
-              mediaUrl={section.mediaUrl}
-              isVideo={section.isVideo}
-              imagePosition={section.imagePosition}
-              hasButton={section.hasButton}
-              bgColor={section.bgColor || '#f8f9fa'}
-              animation="fade-up"
+            id={section.title?.toLowerCase().replace(/\s+/g, '-') || `section-${index}`}
+            title={section.title || 'Seção'}
+            description={section.description || 'Descrição da seção'}
+            cta={section.hasButton ? "Saiba Mais" : ""}
+            mediaUrl={section.mediaUrl}
+            isVideo={section.isVideo}
+            imagePosition={section.imagePosition}
+            hasButton={section.hasButton}
+            bgColor={section.bgColor || '#f8f9fa'}
+            animation="fade-up"
           />
         </React.Fragment>
       ))}
