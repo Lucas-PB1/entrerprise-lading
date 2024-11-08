@@ -5,9 +5,28 @@ import { FaPhone, FaEnvelope } from 'react-icons/fa';
 import NavLinks from './NavLinks';
 import SocialIcons from './SocialIcons';
 
+/**
+ * Componente Header exibe o cabeçalho do site, incluindo:
+ * - Contatos (telefone e e-mail)
+ * - Ícones de redes sociais
+ * - Logo da empresa
+ * - Links de navegação
+ *
+ * @param {Object} props - As propriedades do componente.
+ * @param {Array} props.navLinks - Lista de objetos contendo informações dos links de navegação.
+ * @param {string} props.navLinks.href - URL do link de navegação.
+ * @param {string} props.navLinks.label - Texto do link de navegação.
+ * @param {string} props.logo - URL da imagem do logo da empresa.
+ * @param {Array} props.socialLinks - Lista de objetos com links para redes sociais.
+ * @param {string} props.socialLinks.href - URL da rede social.
+ * @param {string} props.socialLinks.icon - O nome do ícone da rede social (ex: 'facebook', 'twitter', 'instagram').
+ *
+ * @returns {JSX.Element} - Retorna o JSX do cabeçalho com contatos, ícones sociais, logo e links de navegação.
+ */
 const Header = ({ navLinks, logo, socialLinks }) => {
   return (
     <header>
+      {/* Barra superior com contatos e ícones sociais */}
       <Navbar bg='dark' variant='dark' expand='lg' className='top-bar py-1'>
         <Container className='justify-content-between'>
           <div className='contact-icons d-flex align-items-center text-light small flex-wrap'>
@@ -24,6 +43,7 @@ const Header = ({ navLinks, logo, socialLinks }) => {
         </Container>
       </Navbar>
 
+      {/* Barra de navegação principal com logo e links */}
       <Navbar bg='light' expand='lg'>
         <Container>
           <Navbar.Brand href='#' className='d-flex align-items-center'>

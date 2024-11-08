@@ -2,6 +2,14 @@
 import React from 'react';
 import CookieConsent from 'react-cookie-consent';
 
+/**
+ * Componente de consentimento de cookies.
+ *
+ * Este componente exibe uma barra de consentimento de cookies na parte inferior da página.
+ * O usuário pode aceitar o uso de cookies clicando no botão "Aceitar".
+ *
+ * @returns {JSX.Element} - Retorna o componente CookieConsent configurado.
+ */
 function Cookie() {
   return (
     <CookieConsent

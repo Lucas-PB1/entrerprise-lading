@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { saveLogToFile } from '../api/api.ts'; // Importando a função do arquivo TypeScript
 
+/**
+ * Componente de formulário de contato.
+ *
+ * Este componente exibe um formulário onde os usuários podem preencher seus dados (nome, email e mensagem),
+ * e o formulário é enviado para um arquivo de log. Ao enviar o formulário, o estado é atualizado com
+ * uma mensagem de sucesso.
+ *
+ * @returns {JSX.Element} - Retorna o formulário de contato com campos de nome, email e mensagem.
+ */
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -10,9 +19,24 @@ const ContactForm = () => {
   });
   const [statusMessage, setStatusMessage] = useState('');
 
+  /**
+   * Manipulador de mudanças nos campos do formulário.
+   *
+   * Atualiza o estado do formulário quando o usuário digita algo nos campos de nome, email ou mensagem.
+   *
+   * @param {React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>} e - Evento de mudança.
+   */
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  /**
+   * Manipulador do envio do formulário.
+   *
+   * Ao submeter o formulário, os dados são preparados para serem salvos em um arquivo de log,
+   * e uma mensagem de sucesso é exibida para o usuário.
+   *
+   * @param {React.FormEvent<HTMLFormElement>} e - Evento de envio do formulário.
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
 

@@ -2,6 +2,11 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
 
+/**
+ * Componente Loading exibe um indicador de carregamento (spinner) centralizado na tela.
+ *
+ * @returns {JSX.Element} - Retorna um JSX com o spinner de carregamento centralizado.
+ */
 const Loading = () => {
   return (
     <div

@@ -3,6 +3,14 @@ import React from 'react';
 import styled from 'styled-components';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
+/**
+ * Botão flutuante de WhatsApp.
+ *
+ * Este componente renderiza um botão fixo no canto inferior direito da tela,
+ * que, ao ser clicado, direciona o usuário para um número de WhatsApp para contato.
+ *
+ * @returns {JSX.Element} - Retorna o botão de WhatsApp flutuante estilizado.
+ */
 const WhatsAppButton = styled.a`
   position: fixed;
   bottom: 100px;
@@ -20,6 +28,11 @@ const WhatsAppButton = styled.a`
   }
 `;
 
+/**
+ * Componente que renderiza o botão de WhatsApp flutuante.
+ *
+ * @returns {JSX.Element} - Um link estilizado que abre uma conversa do WhatsApp.
+ */
 const FloatingWhatsAppButton = () => (
   <WhatsAppButton
     href='https://wa.me/5583996227670'
