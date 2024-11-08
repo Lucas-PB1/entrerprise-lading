@@ -33,14 +33,14 @@ git clone https://github.com/Lucas-PB1/entrerprise-lading
 Navegue até o diretório do projeto e instale as dependências:
 
 ```bash
-cd landing-page-react
+cd entrerprise-lading
 npm install
 ```
 
 Ou, se você estiver usando Yarn:
 
 ```bash
-cd landing-page-react
+cd entrerprise-lading
 yarn install
 ```
 
