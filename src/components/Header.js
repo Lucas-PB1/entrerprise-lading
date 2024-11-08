@@ -1,9 +1,10 @@
 // src/components/Header.js
 import React from 'react';
-import { Container, Navbar, Nav } from 'react-bootstrap';
-import { FaPhone, FaEnvelope } from 'react-icons/fa';
 import NavLinks from './NavLinks';
+import { Helmet } from 'react-helmet';
 import SocialIcons from './SocialIcons';
+import { FaPhone, FaEnvelope } from 'react-icons/fa';
+import { Container, Navbar, Nav } from 'react-bootstrap';
 
 /**
  * Componente Header exibe o cabeçalho do site, incluindo:
@@ -26,6 +27,22 @@ import SocialIcons from './SocialIcons';
 const Header = ({ navLinks, logo, socialLinks }) => {
   return (
     <header>
+      {/* Meta tags para SEO com dados dinâmicos */}
+      <Helmet>
+        <title>Tech Innovators</title>
+        <meta property='og:image' content={logo} />
+        <meta property='og:title' content='Tech Innovators' />
+        <meta property='og:url' content='https://www.exemplo.com' />
+        <meta
+          name='description'
+          content='Uma empresa focada em nossos clientes'
+        />
+        <meta
+          property='og:description'
+          content='Uma empresa focada em nossos clientes'
+        />
+      </Helmet>
+
       {/* Barra superior com contatos e ícones sociais */}
       <Navbar bg='dark' variant='dark' expand='lg' className='top-bar py-1'>
         <Container className='justify-content-between'>

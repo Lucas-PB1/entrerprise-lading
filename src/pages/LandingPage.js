@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { fetchLandingData } from '../api/api.ts';
 import SectionComponent from '../components/SectionComponent';
 import Loading from '../components/Loading';
-import { Helmet } from 'react-helmet';
 
 /**
  * Componente responsável pela renderização da página inicial (Landing Page).
@@ -34,15 +33,6 @@ function LandingPage() {
 
   return (
     <div>
-      {/* Meta tags para SEO com dados dinâmicos */}
-      <Helmet>
-        <title>{data?.title || 'Página Inicial'}</title>
-        <meta
-          name='description'
-          content={data?.description || 'Descrição da página de destino'}
-        />
-      </Helmet>
-
       {/* Renderiza o componente principal da landing page */}
       <SectionComponent
         id='home'
