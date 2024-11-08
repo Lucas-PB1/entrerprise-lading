@@ -25,35 +25,42 @@ function LandingPage() {
     <div>
       <Helmet>
         <title>{data?.title || 'Página Inicial'}</title>
-        <meta name="description" content={data?.description || 'Descrição da página de destino'} />
+        <meta
+          name='description'
+          content={data?.description || 'Descrição da página de destino'}
+        />
       </Helmet>
 
       <SectionComponent
-        id="home"
+        id='home'
         title={data.title || 'Bem-vindo'}
         description={data.description || 'Conheça nossos serviços e produtos.'}
         cta={data.cta || 'Ver mais'}
         bgColor={data.bgColor || '#fff'}
-        animation="fade-up"
+        animation='fade-up'
         mediaUrl={data.imageUrl}
       />
 
-      {data.sections && data.sections.map((section, index) => (
-        <React.Fragment key={index}>
-          <SectionComponent
-            id={section.title?.toLowerCase().replace(/\s+/g, '-') || `section-${index}`}
-            title={section.title || 'Seção'}
-            description={section.description || 'Descrição da seção'}
-            cta={section.hasButton ? "Saiba Mais" : ""}
-            mediaUrl={section.mediaUrl}
-            isVideo={section.isVideo}
-            imagePosition={section.imagePosition}
-            hasButton={section.hasButton}
-            bgColor={section.bgColor || '#f8f9fa'}
-            animation="fade-up"
-          />
-        </React.Fragment>
-      ))}
+      {data.sections &&
+        data.sections.map((section, index) => (
+          <React.Fragment key={index}>
+            <SectionComponent
+              id={
+                section.title?.toLowerCase().replace(/\s+/g, '-') ||
+                `section-${index}`
+              }
+              title={section.title || 'Seção'}
+              description={section.description || 'Descrição da seção'}
+              cta={section.hasButton ? 'Saiba Mais' : ''}
+              mediaUrl={section.mediaUrl}
+              isVideo={section.isVideo}
+              imagePosition={section.imagePosition}
+              hasButton={section.hasButton}
+              bgColor={section.bgColor || '#f8f9fa'}
+              animation='fade-up'
+            />
+          </React.Fragment>
+        ))}
     </div>
   );
 }

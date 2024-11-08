@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   body {
-    font-family: 'Helvetica', sans-serif;
+    font-family: "Geist Mono", monospace;
     margin: 0;
     padding: 0;
     line-height: 1.6;

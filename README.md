@@ -1,4 +1,4 @@
-```markdown
+````markdown
 # Projeto React - Landing Page com Funcionalidades
 
 Este projeto é uma landing page desenvolvida em React, com diversas funcionalidades, como barra de cookies, botão flutuante do WhatsApp e integração com APIs. O objetivo é criar uma experiência de usuário moderna, acessível e otimizada.
@@ -24,19 +24,23 @@ Certifique-se de que você tenha as seguintes ferramentas instaladas:
    ```bash
    git clone https://seu-repositorio-url.git
    ```
+````
 
 2. **Navegue até o diretório do projeto**:
+
    ```bash
    cd nome-do-diretorio
    ```
 
 3. **Instale as dependências**:
    Se você estiver usando o **npm**:
+
    ```bash
    npm install
    ```
 
    Ou, se estiver usando o **Yarn**:
+
    ```bash
    yarn install
    ```
@@ -45,11 +49,13 @@ Certifique-se de que você tenha as seguintes ferramentas instaladas:
    Para rodar a aplicação no modo de desenvolvimento, execute o seguinte comando:
 
    Se estiver usando **npm**:
+
    ```bash
    npm start
    ```
 
    Se estiver usando **Yarn**:
+
    ```bash
    yarn start
    ```
@@ -88,4 +94,7 @@ Você pode personalizar o conteúdo da página, as cores, os textos e até mesmo
 ## Contribuições
 
 Contribuições são bem-vindas! Caso você tenha uma sugestão ou correção, fique à vontade para abrir um **issue** ou um **pull request**.
+
+```
+
 ```

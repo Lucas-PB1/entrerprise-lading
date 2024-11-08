@@ -6,13 +6,18 @@ const SocialIcons = ({ socialLinks }) => {
   const socialIcons = {
     facebook: <FaFacebookF />,
     twitter: <FaTwitter />,
-    instagram: <FaInstagram />
+    instagram: <FaInstagram />,
   };
 
   return (
-    <div className="social-icons">
+    <div className='social-icons'>
       {socialLinks.map((link, index) => (
-        <a key={index} href={link.href} className="text-light mx-2" aria-label={link.icon.charAt(0).toUpperCase() + link.icon.slice(1)}>
+        <a
+          key={index}
+          href={link.href}
+          className='text-light mx-2'
+          aria-label={link.icon.charAt(0).toUpperCase() + link.icon.slice(1)}
+        >
           {socialIcons[link.icon]}
         </a>
       ))}

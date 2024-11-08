@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 // Interfaces e tipos
 interface NavLink {
@@ -16,7 +16,7 @@ interface Section {
   description: string;
   mediaUrl: string;
   isVideo: boolean;
-  imagePosition: "left" | "right";
+  imagePosition: 'left' | 'right';
   hasButton: boolean;
   bgColor: string;
 }
@@ -43,6 +43,13 @@ interface BlogPost {
   imageUrl: string;
 }
 
+interface PostApiResponse {
+  id: number;
+  title: string;
+  body: string;
+  userId: number;
+}
+
 // Funções de busca de dados
 const fetchJsonData = async <T>(filePath: string): Promise<T> => {
   const response = await axios.get<T>(filePath);
@@ -54,7 +61,7 @@ const fetchJsonData = async <T>(filePath: string): Promise<T> => {
  * @returns {Promise<HeaderData>} - Dados do cabeçalho
  */
 export const fetchHeaderData = async (): Promise<HeaderData> => {
-  return fetchJsonData<HeaderData>("/data/headerData.json");
+  return fetchJsonData<HeaderData>('/data/headerData.json');
 };
 
 /**
@@ -62,16 +69,17 @@ export const fetchHeaderData = async (): Promise<HeaderData> => {
  * @returns {Promise<BlogPost[]>} - Array com os dados dos posts do blog
  */
 export const fetchPosts = async (): Promise<BlogPost[]> => {
-  const response = await axios.get(
-    "https://jsonplaceholder.typicode.com/posts"
+  const response = await axios.get<PostApiResponse[]>(
+    'https://jsonplaceholder.typicode.com/posts'
   );
 
-  const posts = response.data.slice(0, 6).map((post: any) => ({
+  const posts = response.data.slice(0, 6).map((post) => ({
     id: post.id,
     title: post.title,
     body: post.body,
-    imageUrl: "../images/blog/blog-1.jpg",
+    imageUrl: '../images/blog/blog-1.jpg',
   }));
+
   return posts;
 };
 
@@ -80,7 +88,7 @@ export const fetchPosts = async (): Promise<BlogPost[]> => {
  * @returns {Promise<LandingData>} - Dados da landing page
  */
 export const fetchLandingData = async (): Promise<LandingData> => {
-  return fetchJsonData<LandingData>("/data/landingData.json");
+  return fetchJsonData<LandingData>('/data/landingData.json');
 };
 
 /**
@@ -88,9 +96,9 @@ export const fetchLandingData = async (): Promise<LandingData> => {
  * @param {string} data - Dados a serem salvos no log
  */
 export const saveLogToFile = (data: string): void => {
-  const blob = new Blob([data], { type: "text/plain" });
-  const link = document.createElement("a");
+  const blob = new Blob([data], { type: 'text/plain' });
+  const link = document.createElement('a');
   link.href = URL.createObjectURL(blob);
-  link.download = "contact_log.txt";
+  link.download = 'contact_log.txt';
   link.click();
 };

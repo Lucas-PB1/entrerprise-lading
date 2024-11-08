@@ -14,15 +14,20 @@ const WhatsAppButton = styled.a`
   font-size: 24px;
   z-index: 10;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  
+
   &:hover {
     background-color: #128c7e;
   }
 `;
 
 const FloatingWhatsAppButton = () => (
-  <WhatsAppButton href="https://wa.me/5583996227670" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
-    <i className="fab fa-whatsapp" />
+  <WhatsAppButton
+    href='https://wa.me/5583996227670'
+    target='_blank'
+    rel='noopener noreferrer'
+    aria-label='Contato via WhatsApp'
+  >
+    <i className='fab fa-whatsapp' />
   </WhatsAppButton>
 );
 
