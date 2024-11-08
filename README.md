@@ -1,5 +1,3 @@
-Aqui está um exemplo de README para o seu projeto React, com instruções detalhadas sobre como rodar o projeto localmente e outros detalhes importantes:
-
 ```markdown
 # Projeto Landing Page React
 
@@ -110,16 +108,3 @@ Se você deseja contribuir para este projeto, siga os seguintes passos:
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
 ```
-
-### Explicação do README:
-
-1. **Introdução**: Descrição do projeto, suas funcionalidades e tecnologias utilizadas.
-2. **Requisitos**: Lista das versões mínimas necessárias do Node.js e npm/yarn.
-3. **Configuração**:
-   - Passos para clonar o repositório, instalar dependências e rodar o projeto localmente.
-4. **Estrutura do Projeto**: Descrição das pastas e arquivos importantes do projeto.
-5. **Scripts**: Comandos úteis para rodar e testar o projeto.
-6. **Contribuição**: Instruções de como contribuir para o projeto, caso seja de interesse.
-7. **Licença**: Detalhes sobre a licença do projeto (exemplo: MIT).
-
-Este README proporciona uma visão clara e objetiva sobre como rodar e entender o funcionamento do projeto, facilitando para desenvolvedores que queiram colaborar ou testar localmente.
