@@ -32,7 +32,7 @@ function Footer({ navLinks, socialLinks }) {
           Nossa missão é transformar sua visão em soluções tecnológicas que
           potencializam o crescimento do seu negócio.
         </p>
-        <Nav className='justify-content-center flex-column'>
+        <Nav className='justify-content-center'>
           <NavLinks
             navLinks={navLinks}
             linkClass='text-white mx-2 text-decoration-none'
